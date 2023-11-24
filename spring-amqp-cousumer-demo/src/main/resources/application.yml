@@ -1,0 +1,15 @@
+server:
+  port: 8082
+
+# mq配置
+spring:
+  rabbitmq:
+    host: 192.168.111.130
+    port: 5672
+    virtual-host: / #虚拟主机
+    username: admin
+    password: admin
+    listener:
+      simple:
+        prefetch: 1 #每次只能获取一条消息，只有处理完成次啊能获取下一个消息
+
