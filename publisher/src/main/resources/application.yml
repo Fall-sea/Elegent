@@ -1,0 +1,16 @@
+server:
+  port: 8082
+
+# mq配置
+spring:
+  rabbitmq:
+    host: 192.168.111.130
+    port: 5672
+    virtual-host: / #虚拟主机
+    username: admin
+    password: admin
+    publisher-confirm-type: correlated #异步同步 confirmCallback回调函数，MQ返回结果时会调用函数
+    publisher-returns: true #publisher-returns开启功能同时一个callback回调，ReturnCallback
+    template:
+      mandatory: true #定义消息路由失败策略 true （则调用returnCallback、false则直接丢弃消息
+
