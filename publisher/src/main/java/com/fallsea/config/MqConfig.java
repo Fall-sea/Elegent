@@ -14,11 +14,11 @@ import org.springframework.context.annotation.Configuration;
 public class MqConfig {
 
     //交换机持久化
-    @Bean
+  /*  @Bean
     public DirectExchange exchangeDirect(){
         //参数：交换机名称，是否持久化，是否自动删除
         return new DirectExchange("simple.direct",true,false);
-    }
+    }*/
 
     //队列持久化 【默认是持久化】
 

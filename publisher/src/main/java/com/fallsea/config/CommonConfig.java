@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
  * 4
  */
 @Slf4j
-@Configuration//定义一个Return回调
+//@Configuration//定义一个Return回调
 public class CommonConfig implements ApplicationContextAware {
 
     //为RabbitTemplate设置路由到队列失败是调用的方法

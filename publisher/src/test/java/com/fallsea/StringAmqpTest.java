@@ -27,18 +27,18 @@ public class StringAmqpTest {
     //默认发送的消息也是持久化
     @Test
     void name2() {
-        //构建一个消息体
+    /*    //构建一个消息体
         Message message = MessageBuilder.withBody("Hello， world! ".getBytes(StandardCharsets.UTF_8))
                 .setDeliveryMode(MessageDeliveryMode.PERSISTENT)
                 .build();
         //发送消息
-        rabbitTemplate.convertAndSend("simple.queue " , message);
+        rabbitTemplate.convertAndSend("simple.queue " , message);*/
 
     }
 
     @Test
     void name() throws InterruptedException {
-
+/*
         //发送内容
         String message = "今天可以晒太阳";
 
@@ -62,8 +62,12 @@ public class StringAmqpTest {
         );
 
         //发送消息
-        rabbitTemplate.convertAndSend("amqp.test","simple.test",message,correlationData);
+        rabbitTemplate.convertAndSend("simple.direct","simple.test",message,correlationData);
         Thread.sleep(4000);
+       *//* 发送消息失败
+        此时，将交换机的名称改成一个错误不存在的：
+        rabbitTemplate.convertAndSend("ssimple.direct","simple.test",message,correlationData);*/
 
     }
+
 }
