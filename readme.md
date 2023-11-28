@@ -153,16 +153,26 @@ spring会把发送的消息序列化成字节发送给MQ，接收消息的时候
 ###### MQ解决方案
 - 生产者确认机制
   [confirm、return]
-    消息生产者到交换机成功的时候会返回一个confirmCallback
-    消息从交换机到queue队列失败的时候会返回一个returnCallback
+    - 消息生产者到交换机成功的时候会返回一个confirmCallback
+    - 消息从交换机到queue队列失败的时候会返回一个returnCallback
     - ack 消息成功投递到交换机
     - nack 消息未成功投递到交换机
 - mq持久化【默认是非持久化】
   - 交换机持久化
   - 队列持久化
   - 消息持久化
-- 消费者确认机制
+- 消费者确认机制（消费者接收到消息后确认模式）
+  - 自动确认  acknowledge-mode: none  【默认
+    - 一旦消息被consumer（消费者）接收了，则自动确认收到并移除消息缓存消息
+  - 手动确认   acknowledge-mode: manual
+    - 手动 ack
+    - 手动 nack 
+      - channel.basicAck进行手动确认
+      - channel.basicNack如果异常进行手动的确认
+  - 根据异常情况 判断是否确认 
 - 失败重试机制
+- 消费端的限流机制
+- TTL 全称：time to live 过期时间
 
 
 

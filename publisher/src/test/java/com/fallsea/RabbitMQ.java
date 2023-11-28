@@ -39,7 +39,7 @@ public class RabbitMQ {
             }
         });
 
-        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, "tes.bbb", "测试回退模式");
+        rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, "test.bbb", "测试回退模式");
 
 
 
